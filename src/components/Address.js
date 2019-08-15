@@ -55,10 +55,8 @@ class Address extends Component {
             <div>
                 <h1>Address Diary</h1>
                 
-                <SearchForm onChange={ this.fetchAdress }/>
+                <SearchForm onSubmit={ this.fetchAdress }/>
                 <ShowAddress address = { this.state.address }/>
-                
-                
             </div>
         )
     }
@@ -72,27 +70,27 @@ class SearchForm extends Component {
       
     }
     this._handleChange = this._handleChange.bind(this);
-  //  this._handleSubmit = this._handleSubmit.bind(this); 
+    this._handleSubmit = this._handleSubmit.bind(this);
   }
     _handleChange(event){
     console.log(event.target.value);
     this.setState({ evnt: event.target.value});
-    this.props.onChange(this.state.evnt);
+    //this.props.onChange(this.state.evnt);
   };
 
-  // _handleSubmit(event){
-  //   event.preventDefault();
-  //   console.log("hi");
-  //   this.props.onChange(this.state.evnt);
-  // }
+  _handleSubmit(event){
+    event.preventDefault();
+    console.log("hi");
+    this.props.onSubmit(this.state.evnt);
+  }
   render() {
     return (
       <div>
-        {/* <form onSubmit={this._handleSubmit}> */}
+        <form onSubmit={this._handleSubmit}>
           
             <input type="text" value={this.state.evnt} onChange={this._handleChange}/>
-            {/* <button type="submit" >Search</button> */}
-        {/* </form> */}
+            <button type="submit" >Search</button>
+        </form>
       </div>
     )
   }
