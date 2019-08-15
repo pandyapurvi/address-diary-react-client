@@ -36,7 +36,7 @@ ul.nav {
     }
     ul.nav li a {
       float: left;
-      padding: 15px;
+      padding: 8px;
     }
   }
   
@@ -46,7 +46,7 @@ ul.nav {
       text-align: center;
       color: black;
       border-style: double;
-      padding: 0.5rem 3.6rem;
+      padding: 0.5rem 1rem;
     }
     ul.nav{
       background-color: #fff;

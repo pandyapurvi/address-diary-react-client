@@ -35,3 +35,22 @@
 .search-input {
     width: 20%;
 }
+@media screen and (max-width: 400px) {
+    .address {
+        width: 100%;
+    }
+    .search-form {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .btn-search{
+       border: 1px solid black;
+       width: 20%;
+       background-color: lightgray;
+       
+    }
+    .search-input {
+        width: 40%;
+        border: 1px solid black;
+    }
+}
