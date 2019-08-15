@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Form, Col, Button, ButtonToolbar} from 'react-bootstrap'
+import {Form, Col, Button, ButtonToolbar} from 'react-bootstrap';
 import './NewAddress.css'
 
 class NewAddress extends Component {
@@ -44,7 +44,7 @@ class CreateForm extends Component {
         super();
         this.state = {
         propertyType: '', 
-        unitNumber: parseInt(0),
+        unitNumber: '',
         streetType: '', 
         streetNumber: '', 
         street: '',

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Card} from 'react-bootstrap';
+import { CardGroup, row} from 'react-bootstrap';
+import { Card, CardText, Row, Col } from 'reactstrap';
+import './Address.css';
+
+
 
 class Address extends Component {
     constructor(props) {
@@ -53,9 +57,9 @@ class Address extends Component {
         return (
             
             <div>
-                <h1>Address Diary</h1>
+                <h1 className="address-header">Address Diary</h1>
                 
-                <SearchForm onSubmit={ this.fetchAdress }/>
+                <SearchForm onSubmit={ this.fetchAdress } />
                 <ShowAddress address = { this.state.address }/>
             </div>
         )
@@ -86,10 +90,10 @@ class SearchForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this._handleSubmit}>
+        <form onSubmit={this._handleSubmit} className="search">
           
-            <input type="text" value={this.state.evnt} onChange={this._handleChange}/>
-            <button type="submit" >Search</button>
+            <input type="text" value={this.state.evnt} onChange={this._handleChange} className="search-input"/> &nbsp;
+            <button type="submit" className="btn-search">Search</button>
         </form>
       </div>
     )
@@ -105,19 +109,22 @@ const ShowAddress = (props) => {
         return (
          
            
-          <div> 
+          <div > 
           {props.address.map((address) =>
-            <div key= {address.id}>
-            <Card bg="dark" text="white" style={{ width: '18rem' }}>
-            <Card.Body>
-            <Card.Text>
-                 {address.propertyType} {address.unitNumber}<br/>
-                 { address.streetType} {address.streetNumber} {address.street} <br/>
-                {address.suburb} {address.postcode} {address.state}
-                </Card.Text>
-          </Card.Body>
-          </Card>
+          
+            <div key= {address.id} className="grid-container" >
+              <div className="address">
+                 {address.propertyType} {" "}
+                 {address.unitNumber} {" "}<br/>
+                 { address.streetType} {" "}
+                 {address.streetNumber} {" "}
+                 <span style={{textTransform: 'capitalize'}}>{address.street}</span> {","} <br/>
+                <span style={{textTransform: 'capitalize'}}>{address.suburb}</span> {","}  
+                <span style={{textTransform: 'uppercase'}}>{address.state}</span> {address.postcode}
+                <hr></hr>
+                </div>
             </div>
+            
           )}
           </div> 
           
