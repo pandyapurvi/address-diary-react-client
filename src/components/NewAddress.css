@@ -1,0 +1,6 @@
+.red:after { 
+    content:" *";
+    color:red; }
+    
+
+    
