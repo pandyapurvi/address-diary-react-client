@@ -1,6 +1,29 @@
 .red:after { 
     content:" *";
-    color:red; }
+    color:red; 
+}
+.home-page-link:link,
+.home-page-link:visited {
+  display: block;
+  height: 6vh;
+  margin-left: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all .2s;
+  font-size: 1rem;
+  border: 1px solid black;
+  color:black;
+  width: 11rem;
+  text-align: center;
+  padding-top: 15px;
+}
+.home-page-link:hover {
+  border-style: ridge;
+  background-color: #000;
+  color: #fff;
+}
+
     
 
     

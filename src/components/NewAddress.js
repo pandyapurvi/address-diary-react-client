@@ -34,9 +34,7 @@ class NewAddress extends Component {
                 <CreateForm onSubmit = { this.createAddress}/>
             </div>
         )
-       
     }
-    
 };
 
 class CreateForm extends Component {
@@ -49,7 +47,7 @@ class CreateForm extends Component {
         streetNumber: '', 
         street: '',
         suburb: '',
-        postcode: parseInt(2000),
+        postcode: '',
         state: ''
         }
         this._handlePropertyType = this._handlePropertyType.bind(this);
@@ -105,42 +103,41 @@ class CreateForm extends Component {
         return (
         
         <Form onSubmit = {this._handleSubmit}>
+            <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label>Property Type:</Form.Label>
+                    <Form.Control as="select" type="text" onInput = {this._handlePropertyType}>
+                        <option></option>
+                        <option>House</option>
+                        <option>Apartment</option>
+                    </Form.Control>
+                </Form.Group>
         
-        <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Property Type:</Form.Label>
-            <Form.Control as="select" type="text" onInput = {this._handlePropertyType}>
-                <option></option>
-                <option>House</option>
-                <option>Apartment</option>
-      </Form.Control>
-            </Form.Group>
         
-        
-            <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Unit No.:</Form.Label>
-            <Form.Control type="number" onInput = {this._handleUnitNumber} min="1" />
-            </Form.Group>
+                <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Label>Unit No.:</Form.Label>
+                    <Form.Control type="number" onInput = {this._handleUnitNumber} min="1" />
+                </Form.Group>
             </Form.Row>
         
             <Form.Row>
-            <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>Street Type:</Form.Label>
-            <Form.Control type="text" onInput = {this._handleStreetType} />
-            <br />
-            </Form.Group>
+                <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Label>Street Type:</Form.Label>
+                    <Form.Control type="text" onInput = {this._handleStreetType} />
+                    <br />
+                </Form.Group>
         
-            <Form.Group as={Col} controlId="formGridState">
-                <Form.Label className="red">Street No.: </Form.Label>
-                <Form.Control type="text" onInput = {this._handleStreetNumber} required />
-                <br />
-            </Form.Group>
+                <Form.Group as={Col} controlId="formGridState">
+                    <Form.Label className="red">Street No.: </Form.Label>
+                    <Form.Control type="text" onInput = {this._handleStreetNumber} required />
+                    <br />
+                </Form.Group>
             
-            <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label className="red">Street:</Form.Label>
-            <Form.Control type="text" onInput = {this._handleStreet} required />
-            <br />
-            </Form.Group>
+                <Form.Group as={Col} controlId="formGridZip">
+                    <Form.Label className="red">Street:</Form.Label>
+                    <Form.Control type="text" onInput = {this._handleStreet} required />
+                    <br />
+                </Form.Group>
             </Form.Row>
 
             <Form.Row>
@@ -168,10 +165,9 @@ class CreateForm extends Component {
             
             <ButtonToolbar>
                 <Button variant="outline-dark" type="submit">Create Address</Button>
+               <a href="/" className="home-page-link">Go to Home Page</a>
             </ButtonToolbar>
-           
-           
-            </Form>
+        </Form>
         )
     }
 };
