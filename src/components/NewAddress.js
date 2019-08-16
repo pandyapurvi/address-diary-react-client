@@ -30,8 +30,8 @@ class NewAddress extends Component {
     }
     render(){
       return(
-        <div>
-          <h2>Add New Address</h2>
+        <div className="main">
+          <h2 className="h2-header">Add New Address</h2>
           <CreateForm onSubmit = { this.createAddress}/>
         </div>
         )
@@ -100,11 +100,13 @@ class CreateForm extends Component {
     };
     render(){
         return (
-        <Form onSubmit = {this._handleSubmit}>
+        <Form onSubmit = {this._handleSubmit} className="form-container">
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>Property Type:</Form.Label>
-                <Form.Control as="select" type="text" onInput = {this._handlePropertyType}>
+              <Form.Label className="label">Property Type:</Form.Label>
+                <Form.Control as="select" type="text" 
+                  className="input"
+                  onInput = {this._handlePropertyType} >
                   <option></option>
                   <option>House</option>
                   <option>Apartment</option>
@@ -113,57 +115,75 @@ class CreateForm extends Component {
         
         
             <Form.Group as={Col} controlId="formGridPassword">
-              <Form.Label>Unit No.:</Form.Label>
-                <Form.Control type="number" onInput = {this._handleUnitNumber} min="1" />
+              <Form.Label className="label">Unit No.:</Form.Label>
+                <Form.Control type="number" 
+                  onInput = {this._handleUnitNumber} 
+                  min="1"
+                  className="input"
+                />
             </Form.Group>
           </Form.Row>
         
           <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
-              <Form.Label>Street Type:</Form.Label>
-                <Form.Control type="text" onInput = {this._handleStreetType} />
+              <Form.Label className="label">Street Type:</Form.Label>
+                <Form.Control type="text" 
+                  onInput = {this._handleStreetType} 
+                  className="input"
+                />
                 <br />
             </Form.Group>
         
             <Form.Group as={Col} controlId="formGridState">
-              <Form.Label className="red">Street No.: </Form.Label>
-                <Form.Control type="text" onInput = {this._handleStreetNumber} required />
+              <Form.Label className="red label">Street No.: </Form.Label>
+                <Form.Control type="text" 
+                  onInput = {this._handleStreetNumber} 
+                  required 
+                  className="input"
+                />
                 <br />
             </Form.Group>
             
             <Form.Group as={Col} controlId="formGridZip">
-              <Form.Label className="red">Street:</Form.Label>
-                <Form.Control type="text" onInput = {this._handleStreet} required />
+              <Form.Label className="red label">Street:</Form.Label>
+                <Form.Control type="text" 
+                  onInput = {this._handleStreet} 
+                  required
+                  className="input" 
+                />
                 <br />
             </Form.Group>
           </Form.Row>
 
           <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
-              <Form.Label className="red">Suburb:</Form.Label>
+              <Form.Label className="red label">Suburb:</Form.Label>
                 <Form.Control type="text" 
                   onInput = {this._handleSuburb} 
                   required 
                   style={{textTransform: 'capitalize'}}
+                  className="input"
                 />
                 <br />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridState">
-              <Form.Label className="red">Post Code:</Form.Label>
+              <Form.Label className="red label">Post Code:</Form.Label>
                 <Form.Control type="number" 
                   onInput = {this._handlePostcode} 
                   required min="1" 
+                  className="input"
                 />
                 <br />
             </Form.Group>
                 
             <Form.Group as={Col} controlId="formGridZip">
-              <Form.Label className="red">State:</Form.Label>
+              <Form.Label className="red label">State:</Form.Label>
                 <Form.Control type="text" 
                   onInput = {this._handleState} 
                   required 
                   style={{textTransform: 'uppercase'}}
+                  className="input"
                 />
                 <br />
             </Form.Group>
@@ -171,9 +191,10 @@ class CreateForm extends Component {
           </Form.Row>
             
             <ButtonToolbar>
-              <Button variant="outline-dark" type="submit">Create Address</Button>
-                <a href="/" className="home-page-link">Go to Home Page</a>
+              <Button variant="dark" type="submit">Create Address</Button> &nbsp; &nbsp;
+               <a href="/"><Button variant="dark">Go to Home Page</Button></a>
             </ButtonToolbar>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </Form>
         )
     }
