@@ -1,17 +1,14 @@
-# Address Diary Application
-An Application built using React and GraphQL with Apollo.
+# Address Diary 
+Property address management Application built using React and Ruby on Rails.
+
 
 ### Initial setup for server
-```
-
-
-### Initial setup for client
 ```
 cd client
 npm install
 
 ```
-### Steps to run client
+### Steps to run server
 ```
 npm run start
 
