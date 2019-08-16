@@ -5,7 +5,7 @@ Property address management Application built using React and Ruby on Rails.
 
 ### Initial setup for server
 ```
-cd client
+cd address-diary-react-client
 npm install
 
 ```
