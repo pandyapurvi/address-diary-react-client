@@ -1,6 +1,6 @@
 .red:after { 
-    content:" *";
-    color:red; 
+  content:" *";
+  color:red; 
 }
 .home-page-link:link,
 .home-page-link:visited {
